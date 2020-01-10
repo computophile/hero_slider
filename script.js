@@ -23,7 +23,7 @@ hero_buttons = [
 ]
 
 // all queries
-hero_image_query = document.querySelector('#hero');
+hero_image_query = document.querySelector('.section-hero-div');
 hero_title_query = document.getElementsByClassName('hero-title')[0];
 hero_button_query = document.getElementsByClassName('hero-button')[0]
 var interval = setInterval(show_hero,3000);
@@ -33,13 +33,12 @@ function  show_hero(){
          current_hero = (current_hero+1)%hero_images.length
          console.log(document.querySelector('#hero'));
 
-
         hero_image_query.style.backgroundImage = ' linear-gradient(to right, #56ab2f91, #a8e06391), url('+hero_images[current_hero]+')';
         hero_title_query.innerHTML = hero_titles[current_hero];
         hero_button_query.innerHTML = hero_buttons[current_hero];
 
         hero_image_query.animate([
-            {transform:'translateX(1rem)', opacity:0},
+            {transform:'translateX(.5rem)', opacity:0},
             {transform:'translateX(0)', opacity:1}
             ],
             {   
@@ -50,7 +49,7 @@ function  show_hero(){
 
             hero_image_query.animate([
                 {transform:'translateX(0rem)', opacity:1},
-                {transform:'translateX(-1rem)', opacity:0}
+                {transform:'translateX(-.5rem)', opacity:0}
                 ],
                 {   
                     delay: 2700,
